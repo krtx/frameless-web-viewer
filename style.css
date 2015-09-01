@@ -1,0 +1,14 @@
+webview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+input {
+  position: fixed;
+  -webkit-app-region: no-drag;
+  visibility: hidden;
+  font-size: 100%;
+}
