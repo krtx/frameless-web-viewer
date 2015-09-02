@@ -23,12 +23,14 @@ app.on('ready', function () {
     });
 
     globalShortcut.register('Command+K', function () {
-        var url = clipboard.readText('selection');
-        var match = url.match(/^https?:\/\/.+/);
-        if (url.match(/^https?:\/\/.+/)) {
-            win.webContents.send('Command+K', url);
-        } else {
-            win.webContents.send('Command+K')
+        if (win.isFocused()) {
+            var url = clipboard.readText('selection');
+            var match = url.match(/^https?:\/\/.+/);
+            if (url.match(/^https?:\/\/.+/)) {
+                win.webContents.send('Command+K', url);
+            } else {
+                win.webContents.send('Command+K')
+            }
         }
     });
 });
